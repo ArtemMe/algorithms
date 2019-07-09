@@ -23,4 +23,10 @@ public class Node {
     public void setChild(Node[] child) {
         this.child = child;
     }
+
+    @Override
+    public boolean equals(Object o) {
+       return getId().equals(((Node)o).getId());
+    }
+
 }

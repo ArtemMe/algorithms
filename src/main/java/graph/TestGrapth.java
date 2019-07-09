@@ -18,13 +18,14 @@ public class TestGrapth {
         Node n9 = new Node(6);
         Node n10 = new Node(5);
         Node n11 = new Node(11);
-        Node n12 = new Node(103);
+//        Node n12 = new Node(103);
 
-        n1.setChild(new Node[]{n2,n3,n4});
-        n2.setChild(new Node[]{n5,n6,n7});
+        n1.setChild(new Node[]{n2, n3, n4});
+        n2.setChild(new Node[]{n5, n6, n7});
         n3.setChild(new Node[]{n8});
-        n4.setChild(new Node[]{n9,n10});
-        n6.setChild(new Node[]{n11,n12});
+        n4.setChild(new Node[]{n9, n10});
+        n9.setChild(new Node[]{n1, n11});
+//        n11.setChild(new Node[]{n12});
 
         MyGraph g = new MyGraph();
         g.setNode(n1);
