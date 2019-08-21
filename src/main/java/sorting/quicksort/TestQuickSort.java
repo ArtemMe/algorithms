@@ -1,4 +1,4 @@
-package quicksort;
+package sorting.quicksort;
 
 import org.junit.Test;
 
@@ -9,6 +9,13 @@ public class TestQuickSort {
     @Test
     public void test1(){
         QuickSort.sort(arr);
+
+        for(int i : arr) System.out.println(i);
+    }
+
+    @Test
+    public void test2(){
+        QuickSort2.sort(arr);
 
         for(int i : arr) System.out.println(i);
     }
