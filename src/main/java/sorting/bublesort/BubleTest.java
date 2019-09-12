@@ -1,4 +1,4 @@
-package bublesort;
+package sorting.bublesort;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package bublesort;
+package sorting.bublesort;
 
 public class Buble {
     public static void sort(int[] in){
