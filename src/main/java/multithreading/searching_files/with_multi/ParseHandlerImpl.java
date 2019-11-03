@@ -11,6 +11,7 @@ public class ParseHandlerImpl implements ParseHandler {
     private String pattern;
     BacklogThreadPool pool;
     AtomicInteger id = new AtomicInteger();
+    AtomicInteger counter = new AtomicInteger();
 
     public ParseHandlerImpl(String pattern, BacklogThreadPool pool) {
         this.pattern = pattern;
@@ -19,7 +20,7 @@ public class ParseHandlerImpl implements ParseHandler {
 
     @Override
     public void taskStartUnblock() {
-
+        counter.incrementAndGet();
     }
 
     @Override
@@ -43,6 +44,9 @@ public class ParseHandlerImpl implements ParseHandler {
 
     @Override
     public void taskFinishUnblock() {
-
+        int res = counter.decrementAndGet();
+        if(res <= 0) {
+            pool.shutdown();
+        }
     }
 }
