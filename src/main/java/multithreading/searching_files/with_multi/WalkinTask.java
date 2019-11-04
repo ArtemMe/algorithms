@@ -45,18 +45,19 @@ public class WalkinTask implements BackLogTask {
                     parseHandler.schedule(TaskFactory.createWalking1Task(parseHandler, dirPaths));
                 }
                 if (!filePaths.isEmpty()) {
-                    Pattern pattern = parseHandler.getPattern();
-                    List<String> result = new ArrayList<String>();
-                    for (String path : filePaths) {
-                        Matcher matcher = pattern.matcher(path);
-                        while (matcher.find()) {
-                            String str = matcher.group();
-                            if (!"".equals(str)) {
-                                result.add(str);
-                            }
-                        }
-                    }
-                    parseHandler.taskComplete(result);
+                    parseHandler.schedule(TaskFactory.createParseTask(parseHandler, filePaths));
+//                    Pattern pattern = parseHandler.getPattern();
+//                    List<String> result = new ArrayList<String>();
+//                    for (String path : filePaths) {
+//                        Matcher matcher = pattern.matcher(path);
+//                        while (matcher.find()) {
+//                            String str = matcher.group();
+//                            if (!"".equals(str)) {
+//                                result.add(str);
+//                            }
+//                        }
+//                    }
+//                    parseHandler.taskComplete(result);
                 }
             }
         } finally {
