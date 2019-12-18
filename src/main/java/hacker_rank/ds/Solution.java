@@ -1,7 +1,11 @@
 package hacker_rank.ds;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+
 public class Solution {
-    public int findMaxSumHourglass(int[][] input) {
+    public int findMaxSumHourglass(int[][] arr) {
         int startPointWidth = 0;
         int startPointHigh = 0;
         int hourGlassSize = 3;
@@ -13,7 +17,7 @@ public class Solution {
             for (int i = startPointHigh; i < hourGlassSize + startPointHigh; i++) {
                 for (int j = startPointWidth; j < hourGlassSize + startPointWidth; j++) {
                     if (j >= step+startPointWidth && j < hourGlassSize - step+startPointWidth) {
-                        sum += input[i][j];
+                        sum += arr[i][j];
                     }
                 }
                 if(i < 1+startPointHigh) {
@@ -33,6 +37,6 @@ public class Solution {
             }
         }
 
-        return 0;
+        return Arrays.stream(result).max().getAsInt();
     }
 }
