@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         BacklogThreadPool pool = new BacklogThreadPool(4, null);
         String pattern = ".*\\.mp3$";
-        File dir = new File("C:\\Users\\amejelovskiy");
+        File dir = new File("D:\\");
         List list = new ArrayList();
         list.add(dir);
         Long before =  System.nanoTime();
