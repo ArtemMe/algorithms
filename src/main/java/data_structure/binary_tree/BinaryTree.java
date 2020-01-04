@@ -4,6 +4,11 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Добавление элемента: O(log(n))
+ * Получение, удаление элемента: O(log(n)), в худшем случае O(n)
+ * */
+
 public class BinaryTree <T> {
     class Node {
         Node left;
