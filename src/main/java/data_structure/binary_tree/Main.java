@@ -18,7 +18,7 @@ public class Main {
         tree.add(35);
         tree.add(99);
 
-        tree.delete(4);
+        tree.delete(5);
 
         Integer res = tree.deepSearch(5);
         Integer res2 = tree.searchInWidth(5);

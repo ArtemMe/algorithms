@@ -63,17 +63,18 @@ public class BinaryTree <T> {
             } else if(current.right == null){ // или правый пусыне то просто меняем ссылка
                 return current.left;
             } else { // если и левй и правый ребенок есть то переходим в правую ветку и ищем наименьшее значение
-                Node smallestNode = findSmallest(current);
+                Node smallestNode = findSmallest(current.right);
                 current.data = smallestNode.data;
                 current.right = delete(current.right, smallestNode.data);
             }
-        }
-        if(comparator.compare(current.data, data) > 0){
+        } else if(comparator.compare(current.data, data) > 0){
             current.left = delete(current.left, data);
+            return current;
+        } else {
+            current.right = delete(current.right, data);
             return current;
         }
 
-        current.right = delete(current.right, data);
         return current;
     }
 
