@@ -1,5 +1,7 @@
 package hacker_rank.ds.alternating_char;
-
+/**
+ * Нужно посчитать сколько удалить букв из строки чтобы вней буквы не повторялись
+ * */
 public class Solution {
     // Complete the alternatingCharacters function below.
     static int alternatingCharacters(String s) {
