@@ -1,4 +1,4 @@
-package OOP.call;
+package OOP.cards;
 
 public enum Color {
     RED,

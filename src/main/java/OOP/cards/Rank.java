@@ -1,4 +1,4 @@
-package OOP.call;
+package OOP.cards;
 
 /**
  * Модель рангов
