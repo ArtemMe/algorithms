@@ -16,21 +16,20 @@ public class InsertionSort {
         int sortSize = 0;
         for(int i=0; i< result.length; i++) {
 
+            //Ищем место куда нужно вставить элемент arr[i] в уже отсортированный массив result
             int insertIndex = 0;
             while(insertIndex < sortSize && arr[insertIndex] < arr[i]) {
                 insertIndex++;
             }
-
+            //Затем смещаем все значения в массиве вправо что вставить элемент.
             for(int j = sortSize-1; j>=insertIndex; j--) {
                 result[j+1] = result[j];
             }
-
+            //Вставляем элемент
             result[insertIndex] = arr[i];
             sortSize++;
         }
 
         return result;
     }
-
-
 }

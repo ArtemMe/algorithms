@@ -6,25 +6,27 @@ public class QuickSort2 {
     }
 
     public static void sort(int[] in, int low, int high) {
-        int x = in[low+(high-low)/2];
         int i = low;
         int j = high;
+        int pivot = in[low+(low+high)/2];
 
         do{
-            while (x>in[i]) i++;
-            while (x<in[j]) j--;
+            while (pivot > in[i]) i++;
+            while (pivot < in[j]) j--;
 
             if(i<=j) {
-                int tmp = in[i];
-                in[i] = in[j];
-                in[j] = tmp;
-                i++;
-                j--;
+                swap(in, i, j);
+                i++; j--;
             }
-
         } while (i<=j);
 
-        if(low<j) sort(in, low, j);
-        if(high >i) sort(in, i, high);
+        if(i< high) sort(in, i, high);
+        if(j> low) sort(in, low, j);
+    }
+
+    private static void swap(int[] in, int a, int b) {
+        int tmp = in[a];
+        in[a] = in[b];
+        in[b] = tmp;
     }
 }

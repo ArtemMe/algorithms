@@ -3,7 +3,11 @@ package sorting.selection_sort;
 
 /**
  * Сортировка выбором
+ *  1. Берем первый элемент и ищем в остальном массиве наименьший.
+ *  2. Когда нашли меняем текущий элемент с наименьшим и переходим ко второму элементу
+ *  3. Далее ищем в оставшемся массиве наименьший элемент и меняем с текущим.
  *
+ *  и так далее.
  * */
 public class SelectionSort {
     public static int[] sort(int[] arr){
@@ -20,7 +24,7 @@ public class SelectionSort {
     /**
      * Поиск наименьшего значения
      * */
-    public static int findSmalest(int[] arr) {
+    private static int findSmalest(int[] arr) {
         int smalest = arr[0];
         int indexSmalest = 0;
 
