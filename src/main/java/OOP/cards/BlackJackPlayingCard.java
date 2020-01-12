@@ -1,4 +1,4 @@
-package OOP.call;
+package OOP.cards;
 
 public class BlackJackPlayingCard extends PlayingCard {
     @Override
