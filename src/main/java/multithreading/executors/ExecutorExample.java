@@ -55,7 +55,7 @@ public class ExecutorExample {
         ScheduledExecutorService shedulerExecSrv = Executors.newSingleThreadScheduledExecutor();
         Future<String> resultFuture = shedulerExecSrv.schedule(callableTask, 1, TimeUnit.SECONDS);
         //Запускается через определенный интервал
-        Future<String> atFixedRate = shedulerExecSrv.scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS);
+        Future<String> atFixedRate = (Future<String>) shedulerExecSrv.scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS);
 
         //Остановка шедулеров
         executorService.shutdown(); // останавливает шедулеры дожидаясь пока они законччат работу

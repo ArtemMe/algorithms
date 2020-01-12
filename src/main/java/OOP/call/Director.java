@@ -7,7 +7,7 @@ public class Director extends Employee {
     }
 
     @Override
-    public Level handleCall(Call call) {
+    public Call handleCall(Call call) {
         return null;
     }
 }
